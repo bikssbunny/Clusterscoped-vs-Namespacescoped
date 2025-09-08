@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: service
+metadta:
+  name: souvik-service-externalname
+  namespace: souvik-ns
+spec:
+  
+  type: ExternalName
+  externalName: example.com
+  port:
+    - protocol: TCP
+      port: 80

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Replicaset
+metadta:
+  name: souvik-replicaset
+  namespace: souvik-ns
+  lables:
+    app: souvik-nginx-rs
+spec:
+  replicas: 3
+  selector: 
+    matchLables:
+      app: souvik-nginx-rs
+  template:
+    metadta: 
+      lables:
+        app: souvik-nginx-rs
+    spec:
+      containers: 
+        - name: souvik-container-rs
+          image: nginx:1.25
+          ports:
+            containerPorts: 80
+
+
+  

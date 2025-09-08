@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadta:
+  name: souvik-deployment
+  namespace: souvik-ns
+spec: 
+  replicas: 2
+  selector:
+    matchLables:
+      app: Demo
+  template:
+    metadta:
+      lables:
+        app: Demo
+    spec:
+      containers:
+        - name: c1
+          image: souviksarkar123/ipl:latest
+          ports:
+            - containerPorts: 80
